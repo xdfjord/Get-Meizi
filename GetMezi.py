@@ -1,5 +1,5 @@
 #coding: utf-8
-import argparse
+import sys
 import urllib
 import os
 import requests
@@ -195,18 +195,17 @@ def get_dir_img_page_url(l, dir_soup):
         url_list.append(u)
     return url_list
 
-
-
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("echo")
-    # # parser.add_argument("url")
-    # # url = int(args.url)
-    # args = parser.parse_args()
-    # url = str(args.echo)
-    url = 'http://www.mzitu.com/mm/page/9'
+    parser = str(int(sys.argv[1]))
+    url = 'http://www.mzitu.com/mm/page/'+parser
     print("开始解析：" + url)
-
+    
+    try:
+        os.mkdir(parser)
+    except Exception as e:
+        print("文件夹："+parser+"，已经存在")
+    os.chdir(parser)
+    print(os.getcwd())
     html = get_html(url)
     
     soup = get_soup(html)
@@ -221,7 +220,7 @@ if __name__ == '__main__':
             my_thread.start()
             #my_thread.join()
     print("end!")
-    #save_file("a","b.jpg",'http://i.meizitu.net/2017/02/01a04.jpg')
+#    #save_file("a","b.jpg",'http://i.meizitu.net/2017/02/01a04.jpg')
 
 
 
