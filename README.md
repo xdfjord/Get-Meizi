@@ -2,8 +2,9 @@
 
 直接运行 python GetMezi.py
 
-
 或者我在ubuntu(or linux)的环境下运行 python3.5 GetMezi.py
+
+
 
 
 
