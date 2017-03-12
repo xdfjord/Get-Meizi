@@ -1,3 +1,6 @@
+README.md
+---------
+
 运行在 python 3.4 环境的脚本
 
 直接运行 python GetMezi.py
