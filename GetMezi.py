@@ -196,7 +196,7 @@ def get_dir_img_page_url(l, dir_soup):
     return url_list
 
 if __name__ == '__main__':
-    parser = str(int(sys.argv[1]))
+    parser = str(int(sys.argv[1]))      # 必须是数字
     url = 'http://www.mzitu.com/mm/page/'+parser
     print("开始解析：" + url)
     
