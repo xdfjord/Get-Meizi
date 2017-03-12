@@ -3,9 +3,15 @@ README.md
 
 运行在 python 3.4 环境的脚本
 
-直接运行 python GetMezi.py
-
-或者我在ubuntu(or linux)的环境下运行 python3.5 GetMezi.py
+直接运行 
+```bash
+python GetMezi.py 1
+```
+其中的参数 1 可以换成其他数字(一定要是数字！)
+或者我在ubuntu(or linux)的环境下运行
+```bash
+python3.5 GetMezi.py 1
+```
 ####终端显示的信息：
 ![](https://github.com/RanFeng/Python/blob/master/1.png) 
 
