@@ -12,6 +12,24 @@ import time
 TIME = 20                      # 单位是s
 socket.setdefaulttimeout(TIME) # 设置延迟时间，请求超出时间就会断开
 
+<<<<<<< HEAD
+
+
+User_Agent = ['Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0',
+        'Mozilla/4.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0',
+        'Mozilla/3.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0',
+        'Mozilla/2.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0',
+        'Mozilla/1.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0',
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36',
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.3112.78 Safari/537.36',
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3112.78 Safari/537.36',
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/23.0.3112.78 Safari/537.36']
+
+#   print(int(time.time())%100)
+
+
+=======
+>>>>>>> fab579f6fc8ab4035f053984f590aaa1b9305256
 class MyThread(threading.Thread):
     """
     属性:
@@ -33,7 +51,14 @@ def get_html(url_address):
     :param url_address: 请求的网页地址
     :return: html
     """
+<<<<<<< HEAD
+    headers = {'User-Agent':User_Agent[int(time.time())%len(User_Agent)],
+               'Referer':'http://www.mzitu.com/',
+               'Cookie':'Hm_lvt_dbc355aef238b6c32b43eacbbf161c3c=1503067509; Hm_lpvt_dbc355aef238b6c32b43eacbbf161c3c=1503068270',
+               'Connection':'keep-alive'}
+=======
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+>>>>>>> fab579f6fc8ab4035f053984f590aaa1b9305256
     req = urllib.request.Request(url=url_address, headers=headers)
     calc = 0
     while(True):
@@ -145,6 +170,14 @@ def download_img_from_page(t, page_url):
 
 #http://i.meizitu.net/2017/02/01a04.jpg
 def save_file(d, filename, img_url):
+<<<<<<< HEAD
+    headers = {'User-Agent':User_Agent[int(time.time())%len(User_Agent)],
+               'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+               'Referer':'http://www.mzitu.com/',#这是破解反爬虫的关键
+               'Cookie':'Hm_lvt_dbc355aef238b6c32b43eacbbf161c3c=1503067509; Hm_lpvt_dbc355aef238b6c32b43eacbbf161c3c=1503068270',
+               'Connection':'keep-alive'}
+=======
+>>>>>>> fab579f6fc8ab4035f053984f590aaa1b9305256
     name = str(d+"/"+filename)
     if(os.path.exists(name)):
         print("已下载...")
@@ -152,7 +185,11 @@ def save_file(d, filename, img_url):
     calc = 0
     while(1):
         try :
+<<<<<<< HEAD
+            img = requests.get(url=img_url,timeout=TIME,headers=headers)
+=======
             img = requests.get(img_url,timeout=TIME)
+>>>>>>> fab579f6fc8ab4035f053984f590aaa1b9305256
             break;
         except :
             print("下载图片超时！！！",calc,img_url);
@@ -200,15 +237,25 @@ if __name__ == '__main__':
     url = 'http://www.mzitu.com/mm/page/'+parser
     print("开始解析：" + url)
     
+<<<<<<< HEAD
+
+    html = get_html(url)
+    
+    soup = get_soup(html)
+=======
+>>>>>>> fab579f6fc8ab4035f053984f590aaa1b9305256
     try:
         os.mkdir(parser)
     except Exception as e:
         print("文件夹："+parser+"，已经存在")
     os.chdir(parser)
     print(os.getcwd())
+<<<<<<< HEAD
+=======
     html = get_html(url)
     
     soup = get_soup(html)
+>>>>>>> fab579f6fc8ab4035f053984f590aaa1b9305256
 
     img_dirs = get_img_dirs(soup)
     print (img_dirs)
